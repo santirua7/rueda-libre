@@ -1,0 +1,42 @@
+URL: http://127.0.0.1:5500/index.html
+protocolo: http/1.1
+host: 127.0.0.1:5500
+puerto: 127.0.0.1:5500
+ruta: /index.html
+Metodo: GET
+Status: 304
+
+roles
+
+html: estructura
+Define el esqueleto y el contenido semántico de la página.
+
+<article class="ruta-card">
+    <img src="ruta-montana.jpg" alt="Ruta por la montaña">
+    <h3>Ruta de Alta Montaña</h3>
+    <p>Nivel avanzado - 45 km</p>
+    <button id="btn-reservar">Reservar Ruta</button>
+</article>
+
+css: estilos
+Se encarga del diseño visual, los colores, las tipografías y la adaptabilidad para que el sitio luzca profesional
+
+.ruta-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+.ruta-card h3 {
+    color: #2e7d32; /* Tono verde deportivo */
+}
+
+javascript: Interactividad
+Aporta dinamismo y funcionalidad interactiva sin necesidad de recargar la página.
+
+const botonReservar = document.getElementById('btn-reservar');
+
+botonReservar.addEventListener('click', () => {
+    alert('¡Has reservado exitosamente tu lugar en la Ruta de Alta Montaña!');
+});
