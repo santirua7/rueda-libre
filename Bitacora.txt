@@ -40,3 +40,134 @@ const botonReservar = document.getElementById('btn-reservar');
 botonReservar.addEventListener('click', () => {
     alert('¡Has reservado exitosamente tu lugar en la Ruta de Alta Montaña!');
 });
+
+## Bitácora de Rutas y Enlaces
+
+Aquí tienes registrada la tabla con la ruta que solucionó la navegación entre tus páginas:
+
+| Archivo de Origen | Destino (Página / Sección)                 | Ruta Escrita en el Código                                                                     |
+| `index.html`      | `/paginas/tarifas.html#tarifas_recorridos` | `<a href="/paginas/tarifas.html#tarifas_recorridos" target="_blank">Nuestras Tarifas<br></a>` |
+| `index.html`      | `/paginas/reservas.html                    | `<a href="/paginas/tarifas.html#tarifas_recorridos" target="_blank">Nuestras Tarifas<br></a>` |
+
+
+formulario
+<header>
+  <h1>Reserva tu bicicleta</h1>
+</header>
+
+<main>
+  <form action="#" method="post">
+    <fieldset>
+    <legend> Formulario de reservas</legend>
+    <p>
+      <label for="nombre"> Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" required minlenght="3">
+    </p>
+    <p>
+      <label for="correo"> correo </label>
+      <input type="email" id="correo" name="correo" required>  
+    </p>
+    <p>
+      <label for="telefono"> celular (10 digitos)</label>
+      <input type="tel" id="telefono" name= "telefono" pattern="[0-9]{10}"
+      title="Escribe 10 numeros, sin espacios">
+    </p>
+    <p>
+      <label for="fecha"> Fecha </label>
+      <input type="date" id="fecha" name="fecha">
+    </p>
+    </fielset>
+    <fieldset>
+      <legend>Mensaje </legend>
+      <p>
+        <label for="tipo"> tippo de bicicleta</label>
+        <select id="tipo" name="tipo" required>
+          <option value="">Selecciona una opcion</option>
+          <option value="">Reservar bicicleta</option>
+          <option value="">personalizado</option>
+        </select>
+      </p>
+      <p>
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" minlength="10" required></textarea>
+      </p>
+    </fieldset>
+    <p><button type="submit">Enviar mensaje</button></p>
+  </form>
+  <!-- Construye aquí el formulario de reservas:
+       nombre, correo (obligatorio), fecha y tipo de bicicleta -->
+
+</main>
+
+
+Esquema de regiones de cada pagina
+
+index.html
++-------------------------------------------------------------------+
+| ENCABEZADO (<header>)                                             |
+| ├── Logotipo corporativo (<img>)                                  |
+| ├── Título principal ("Rueda libre")                              |
+| └── Eslogan / Descripción corta                                   |
++-------------------------------------------------------------------+
+| NAVEGACIÓN (<nav> / Enlaces internos y externos)                  |
+| ├── Enlace interno a ubicación (#encuentranos)                    |
+| └── Enlace externo a tarifas (/paginas/tarifas.html)              |
++-------------------------------------------------------------------+
+| CONTENIDO PRINCIPAL (<main>)                                      |
+|   ├── SECCIÓN 1: ¿Quiénes somos? (<section>)                      |
+|   ├── SECCIÓN 2: ¿Por qué elegirnos? (<section> con lista <ul>)   |
+|   ├── SECCIÓN 3: ¿Cómo alquilar? (<section> con lista <ol>)       |
+|   └── SECCIÓN 4: Nuestros servicios (<section> con <dl>)          |
++-------------------------------------------------------------------+
+| CONTENIDO COMPLEMENTARIO / CONTACTO (<section id="encuentranos">) |
+| ├── Título de ubicación                                           |
+| ├── Mapa interactivo cliqueable (Imagen con enlace a Google Maps) |
+| └── Enlace de correo electrónico (mailto:)                        |
++-------------------------------------------------------------------+
+| PIE DE PÁGINA (<footer>)                                          |
+| └── Derechos reservados / metadatos de cierre                     |
++-------------------------------------------------------------------+   
+
+tarifas.html
++-------------------------------------------------------------------+
+| ENCABEZADO (<header>)                                             |
+| └── Título principal de la subpágina ("Tarifas Rueda Libre")      |
++-------------------------------------------------------------------+
+| CONTENIDO PRINCIPAL (<main>)                                      |
+|   ├── SECCIÓN 1: Tarifas Generales de Alquiler                    |
+|   │   └── Tabla semántica (<table>) con precios por tipo de bici  |
+|   │                                                               |
+|   └── SECCIÓN 2: Recorridos Guiados (<section id="tarifas_recorridos">)
+|       ├── Título de la sección de rutas                           |
+|       └── Tabla semántica (<table>) con detalles y costos         |
++-------------------------------------------------------------------+
+| ARTÍCULO / CONTENIDO COMPLEMENTARIO (<article> o <p>)             |
+| └── Notas informativas (qué incluye, horarios y qué llevar)       |
++-------------------------------------------------------------------+
+| PIE DE PÁGINA (<footer>)                                          |
+| └── Cierre de la página secundaria                                |
++-------------------------------------------------------------------+
+
+reservas.html
++-------------------------------------------------------------------+
+| ENCABEZADO (<header>)                                             |
+| └── Título principal ("Reserva tu bicicleta")                     |
++-------------------------------------------------------------------+
+| NAVEGACIÓN (<nav>)                                                |
+| └── Lista de navegación (<ul> / <li>)                             |
+|     ├── Enlace a Inicio (../index.html)                           |
+|     ├── Enlace a Tarifas y rutas (../paginas/tarifas.html)         |
+|     └── Enlace a Reservas (../paginas/reservas.html)              |
++-------------------------------------------------------------------+
+| CONTENIDO PRINCIPAL (<main>)                                      |
+|   ├── SECCIÓN 1: Contacto (<section id="contacto">)               |
+|   │   ├── Título de sección (<h2>)                                |
+|   │   └── Correo de soporte (<a href="mailto:...">)               |
+|   │                                                               |
+|   └── SECCIÓN 2: Horario de atención (<section id="horario">)    |
+|       ├── Título de sección (<h2>)                                |
+|       └── Lista de descripción (<dl> / <dt> / <dd>)               |
++-------------------------------------------------------------------+
+| PIE DE PÁGINA (<footer>)                                          |
+| └── Derechos de autor (&copy; 2026) y correo de contacto          |
++-------------------------------------------------------------------+
