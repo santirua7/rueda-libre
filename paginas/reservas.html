@@ -18,6 +18,47 @@
     </nav>
 
     <main>
+        <section id="formulario">
+            <form action="#" method="post">
+            <fieldset>
+                <legend> Formulario de reservas</legend>
+                <p>
+                    <label for="nombre"> Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" required minlenght="3">
+                </p>
+                <p>
+                    <label for="correo"> correo </label>
+                    <input type="email" id="correo" name="correo" required>
+                </p>
+                <p>
+                    <label for="telefono"> celular (10 digitos)</label>
+                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}"
+                        title="Escribe 10 numeros, sin espacios">
+                </p>
+                <p>
+                    <label for="fecha"> Fecha </label>
+                    <input type="date" id="fecha" name="fecha">
+                </p>
+            </fieldset>
+            <fieldset>
+                    <legend>Mensaje </legend>
+                    <p>
+                        <label for="tipo"> tippo de bicicleta</label>
+                        <select id="tipo" name="tipo" required>
+                            <option value="">Selecciona una opcion</option>
+                            <option value="">Reservar bicicleta</option>
+                            <option value="">personalizado</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" minlength="10" required></textarea>
+                    </p>
+            </fieldset>
+            <p><button type="submit">Enviar mensaje</button></p>
+            </form>
+        </section>
+        
         <section id="contacto">
             <h2>Contacto</h2>
             <p>Para dudas o solicitudes especiales, escríbenos a:
