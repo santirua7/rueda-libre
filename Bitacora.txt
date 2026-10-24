@@ -19,7 +19,8 @@ Define el esqueleto y el contenido semántico de la página.
 </article>
 
 css: estilos
-Se encarga del diseño visual, los colores, las tipografías y la adaptabilidad para que el sitio luzca profesional
+Se encarga del diseño visual, los colores, las tipografías y la 
+adaptabilidad para que el sitio luzca profesional
 
 .ruta-card {
     background-color: #ffffff;
@@ -171,3 +172,93 @@ reservas.html
 | PIE DE PÁGINA (<footer>)                                          |
 | └── Derechos de autor (&copy; 2026) y correo de contacto          |
 +-------------------------------------------------------------------+
+
+Elemento Original	                            Acción Realizada	    Justificación / Estado
+<div class="servicios-grid"> (en index.html)	Eliminado	            Se reemplazó estructurando los <article> directamente como hijos de la <section> de servicios. Los estilos de diseño o maquetación (Grid/Flexbox) se aplicarán directamente sobre la etiqueta semántica <section>, logrando cero uso de etiquetas genéricas <div> o <span> en todo el proyecto web.
+
+Selección del control adecuado para cada dato del cliente
+
+1. Nombre completo: Campo de texto de una sola línea (<input type="text">).
+
+2. Correo electrónico: Campo especializado en correo (<input type="email">), que incluye validación automática de formato (arroba y dominio).
+
+3. Celular / Teléfono: Campo de teléfono (<input type="tel">) acompañado de un patrón numérico (pattern) para asegurar la cantidad correcta de dígitos.
+
+4. Fecha de reserva: Selector de fecha de calendario (<input type="date">).
+
+5. Tipo de bicicleta: Lista desplegable (<select>) para ofrecer opciones únicas y ordenadas de selección múltiple cerrada.
+
+6. Mensaje o solicitudes especiales: Área de texto multilínea (<textarea>) para permitir párrafos largos o comentarios detallados.
+
+7. Aceptación de términos y condiciones: Casilla de verificación única o recuadro de marcación (<input type="checkbox">).
+
+Justificación
+
+Elemento / Dato         Control HTML                Justificación Técnica y Semántica
+Correo electrónico	    <input type="email">	    Se selecciona este control en lugar 
+                                                    de un text genérico porque los 
+                                                    navegadores y dispositivos móviles 
+                                                    activan automáticamente un teclado 
+                                                    adaptado con el símbolo @ y realizan 
+                                                    una validación nativa previa al 
+                                                    envío, evitando errores de digitación 
+                                                    del usuario.
+
+Tipo de bicicleta	    Lista desplegable 
+                        (<select> / <option>)	    Es el control ideal cuando el usuario 
+                                                    debe elegir una opción única dentro 
+                                                    de un conjunto cerrado y predefinido 
+                                                    de alternativas (urbana, montaña, 
+                                                    eléctrica), optimizando el espacio 
+                                                    visual de la interfaz y garantizando 
+                                                    que los datos ingresados coincidan 
+                                                    exactamente con lo que el sistema 
+                                                    espera recibir.
+
+Aceptación de términos	Casilla de verificación 
+                        (<input type="checkbox">)	Se elige un checkbox porque representa 
+                                                    conceptualmente una acción booleana o 
+                                                    de opción única de aceptación explícita 
+                                                    ("sí o no"), siendo el estándar legal 
+                                                    y de accesibilidad web requerido para 
+                                                    consentimientos antes de procesar un 
+                                                    formulario.
+
+Mapeo de controles 
+
+Campo / Dato                Etiqueta Visible (<label>)      ID del Control (id)     Nombre de Envío (name)
+Nombre completo             Nombre completo:                nombre                  nombre
+Correo electrónico          Correo electrónico:             correo                  correo
+Documento                   Documento:                      documento               documento
+Celular                     Celular (10 dígitos):           telefono                telefono
+Tipo de bicicleta           Tipo de bicicleta:              tipo                    tipo
+Cantidad de bicicletas      Cantidad de bicicletas:         cantidad                cantidad 
+Fecha de reserva            Fecha de reserva:               fecha                   fecha
+Mensaje especial            Mensaje / Solicitud especial:   mensaje                 mensaje
+Aceptación de términos      Acepto los términos...          terminos                terminos
+
+Mapa de uso de color 
+
+Combinación Evaluada	        Texto / Fondo               Ratio de Contraste	    Cumplimiento WCAG 2.1 AA	                    Cumplimiento WCAG 2.1 AAA	        Estado / Recomendación
+                                                                                    Texto normal    Texto Grande    Enlaces         Texto normal    Texto Grande
+Blanco / Verde Ruta             / #FFFFFF / #1E7A4F        5.31:1	              Pasa	          Pasa            Pasa            Falla           Pasa	              Aprobado. Apto para 
+                                                                                                                                                                        texto normal y botones
+                                                                                                                                                                        con texto Blanco.
+Blanco / Naranja Pedal          / #FFFFFF / #F39A2B	      2.21:1              Falla           Falla           Falla            Falla           Falla              No usar. El texto blanco 
+                                                                                                                                                                        sobre este naranja no es 
+                                                                                                                                                                        legible.
+Azul Noche / Naranja Pedal      / #14213D / #F39A2B         7.2:1               Pasa            Pasa       	  Pasa            Pasa            Pasa                Excelente. Usar texto 
+                                                                                                                                                                        Azul noche cuando el 
+                                                                                                                                                                        fondo sea naranja pedal.
+Azul Noche / Crema              / #14213D / #FAF6EF	      14.82:1             Pasa            Pasa            Pasa            Pasa            Pasa                Excelente. Máxima legibilidad 
+                                                                                                                                                                        para títulos y texto principal.
+Gris Asfalto / Crema            / #5B6470 / #FAF6EF	      5.56:1              Pasa            Pasa            Pasa            Falla           Pasa                Aprobado. Legible para 
+                                                                                                                                                                        parrafos secundarios y 
+                                                                                                                                                                        descripciones.
+Verde Ruta / Crema              / #1E7A4F / #FAF6EF	      4.93:1              Pasa            Pasa            Pasa            Falla           Pasa                Atención. Usar para enlaces 
+                                                                                                                                                                        en negrita o texto de tamaño 
+                                                                                                                                                                        igual o superior a 18pt / 24px.
+Naranja Pedal / Crema           / #F39A2B / #FAF6EF	      2.05:1              Falla           Falla           Falla           Falla           Falla               NO USAR para texto. Usar 
+                                                                                                                                                                        únicamente para elementos 
+                                                                                                                                                                        decorativos o bordes.
+Blanco / Azul Noche             / #FFFFFF / #14213D         15.97:1             Pasa            Pasa            Pasa            Pasa            Pasa                Excelente. Contraste superior para encabezados o pies de página oscuros.

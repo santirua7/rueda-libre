@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,41 +21,63 @@
         <section id="formulario">
             <form action="#" method="post">
             <fieldset>
-                <legend> Formulario de reservas</legend>
+                <legend> Tus datos </legend>
                 <p>
-                    <label for="nombre"> Nombre completo</label>
+                    <label for="nombre"> Nombre completo: </label><br>
                     <input type="text" id="nombre" name="nombre" required minlenght="3">
                 </p>
                 <p>
-                    <label for="correo"> correo </label>
+                    <label for="documento"> Documento: </label><br>
+                    <input type="text" id="documento" name="documento" inputmode="numeric" pattern="[0-9]{6,10}" 
+                    title="Escribe tu documento, sin espacios" required>
+                </p>
+                <p>
+                    <label for="correo"> Correo electronico: </label><br>
                     <input type="email" id="correo" name="correo" required>
                 </p>
                 <p>
-                    <label for="telefono"> celular (10 digitos)</label>
-                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}"
-                        title="Escribe 10 numeros, sin espacios">
+                    <label for="telefono"> Celular (10 digitos): </label><br>
+                    <input type="tel" id="telefono" name="telefono" inputmode="numeric" pattern="[0-9]{10}"
+                        title="Escribe Celular, sin espacios, 10 numeros" required>
                 </p>
-                <p>
-                    <label for="fecha"> Fecha </label>
-                    <input type="date" id="fecha" name="fecha">
-                </p>
+                
             </fieldset>
             <fieldset>
-                    <legend>Mensaje </legend>
+                    <legend>Tu alquiler </legend>
                     <p>
-                        <label for="tipo"> tippo de bicicleta</label>
+                        <label for="tipo"> Tipo de bicicleta</label>
                         <select id="tipo" name="tipo" required>
                             <option value="">Selecciona una opcion</option>
-                            <option value="">Reservar bicicleta</option>
-                            <option value="">personalizado</option>
+                            <option value="urbana">Bicicleta Urbana</option>
+                            <option value="montana">Bicicleta de Montaña</option>
+                            <option value="electrica">Bicicleta Electrica</option>
                         </select>
                     </p>
                     <p>
-                        <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" rows="4" minlength="10" required></textarea>
+                        <label for="Cantidad"> Cantidad de bicicletas: </label><br>
+                        <input type="number" id="cantidad" name="cantidad" min="1" max="6">
+                    </p>
+                    <p>
+                        <label for="fecha"> Fecha de reserva: </label><br>
+                        <input type="date" id="fecha" name="fecha" min="2026-11-01" max="2026-12-31">
+                    </p>
+                    <p>
+                        <label for="mensaje">Mensaje / Solicitud especial: </label><br>
+                        <textarea id="mensaje" name="mensaje" rows="4" minlength="10" maxlength="300" required placeholder="Escribe si necesitas casco extra, silla para niños, etc."></textarea>
                     </p>
             </fieldset>
-            <p><button type="submit">Enviar mensaje</button></p>
+            <fieldset>
+                <legend>Confirmación</legend>
+                <p>
+                    <label for="terminos">
+                        <input type="checkbox" id="terminos" name="terminos" value="si" required>
+                        Acepto los términos y condiciones del servicio de alquiler.
+                    </label>
+                </p>
+                <p>
+                    <button type="submit">Enviar reserva</button>
+                </p>
+            </fieldset>
             </form>
         </section>
         
@@ -65,26 +87,25 @@
                 <a href="mailto:contacto@labicicleta.com">contacto@labicicleta.com</a>
             </p>
         </section>
-    
-        <section id="horario">
-            <h2>Horario de atención</h2>
-            <dl> <!--lista de definicion-->
-                <dt>Lunes a Viernes</dt>
-                <dd>08:00 - 20:00</dd>
-    
-                <dt>Sábados</dt>
-                <dd>09:00 - 18:00</dd>
-    
-                <dt>Domingos y Festivos</dt>
-                <dd>09:00 - 14:00</dd>
-            </dl>
-        </section>
     </main>
-
+    
+    <aside id="horario">        
+        <h2>Horario de atención</h2>
+        <dl> <!--lista de definicion-->            
+            <dt>Lunes a Viernes</dt>
+            <dd>08:00 - 20:00</dd>
+    
+            <dt>Sábados</dt>
+            <dd>09:00 - 18:00</dd>
+                
+            <dt>Domingos y Festivos</dt>
+            <dd>09:00 - 14:00</dd>        
+        </dl>
+    </aside>    
+    
     <footer>
         <p>&copy; 2026 La Bicicleta - Contacto: <a href="mailto:contacto@labicicleta.com">contacto@labicicleta.com</a></p>
     </footer>
-    
 
 </body>
 </html>
