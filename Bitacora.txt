@@ -262,3 +262,11 @@ Naranja Pedal / Crema           / #F39A2B / #FAF6EF	      2.05:1              Fa
                                                                                                                                                                         únicamente para elementos 
                                                                                                                                                                         decorativos o bordes.
 Blanco / Azul Noche             / #FFFFFF / #14213D         15.97:1             Pasa            Pasa            Pasa            Pasa            Pasa                Excelente. Contraste superior para encabezados o pies de página oscuros.
+
+
+Especificidad y Conflicto en el Menú
+
+Selector  ID(#menu), etiqueta (a)
+Especificidad: (1 0 1)
+Selector Clase(.activo) 
+Especificidad: (0 1 0)
