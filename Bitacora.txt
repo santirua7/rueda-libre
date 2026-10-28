@@ -270,3 +270,9 @@ Selector  ID(#menu), etiqueta (a)
 Especificidad: (1 0 1)
 Selector Clase(.activo) 
 Especificidad: (0 1 0)
+
+Se organizo la pertaña de estilos de forma ordenada y que se entienda, se agregaron variados estilos para una navegacion mas limpia .
+se declararon variables globales, familias tipograficas que agrupan los tipos de texto para los titulos y para el cuerpo.
+se agrego estilos al encabezado y navegacion, tarjetas y servicios, tablas y formularios, y a los botones que se vean mas interactivos.
+se agrego estilo al pie de pagina.
+
