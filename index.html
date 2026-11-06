@@ -12,19 +12,35 @@
 </head>
 <body>
     <header>
-        <img src="img/portada.jfif" alt="Rua's logo" width="200">
-        <h1><strong><em>Rueda libre</em></strong></h1>
-        <p>Alquiles de Bicicletas en Medellín: Recorridos guiados y taller especializado.
-            Conoce mas sobre nuestra comunidad o pasa a <a href="#encuentranos">ver donde estamos ubicamos.<br></a>
-        </p>
+        <div class="header_container">
+            <h1><strong><em>Rueda libre </em></strong></h1>
+            <div class="nav-flota">                    
+                <nav>
+                    <ul id="menu">
+                        <li><a href="index.html" class="activo  ">Inicio</a></li>
+                        <li><a href="paginas/tarifas.html">Tarifas</a></li>
+                        <li><a href="paginas/reservas.html">Reservas</a></li>
+                    </ul>
+                </nav>
+                <a href="#flota" class="btn">Ver flota</a>
+            </div>                            
+        </div>
     </header>
-    <nav>
-        <ul id="menu">
-            <li><a href="index.html" class="activo">Inicio</a></li>
-            <li><a href="paginas/tarifas.html">Tarifas</a></li>
-            <li><a href="paginas/reservas.html">Reservas</a></li>
-        </ul>
-    </nav>
+    <div class="portada_imagen">
+        <img src="img/portada.jfif" alt="Rua's logo">
+    </div>
+    <p>
+        Alquiler de Bicicletas en Medellín: Recorridos guiados y taller especializado.
+        Conoce mas sobre nuestra comunidad.
+    </p>
+    <section class="portada_inicio">
+        <div class="portada_contenido">
+            <h2>Explora la ciudad a tu ritmo</h2>
+            <p>Alquiler de Bicicletas en Medellín: Recorridos guiados y taller especializado. Conoce más sobre nuestra comunidad o
+                pasa a <a href="#encuentranos">ver dónde estamos ubicados.</a></p>
+        </div>
+    </section>
+    
     <main>
         <section>
             <h2>¿Quienes somos?</h2>
@@ -105,6 +121,127 @@
                     <img src="img/Bicicleta.webp" alt="Bicicletas de calidad" width="200"><br>
                 </p>
             </section>
+            <section class="seccion-flota">
+                <h2>Nuestra flota</h2>
+                <div class="flota-grid">
+            
+                    <!-- Modelo 1: Urbana Clásica -->
+                    <article class="tarjeta-flota">
+                        <img src="../img/urbana-clasica.jpg" alt="Urbana Clásica">
+                        <div class="tarjeta-contenido">
+                            <h3>Urbana Clásica</h3>
+                            <p>Cómoda y liviana para las ciclorrutas.</p>
+                            <span class="precio">$10.000 <small>/ hora</small></span>
+                            <a href="paginas/reservas.html" class="btn">Reservar</a>
+                        </div>
+                    </article>
+            
+                    <!-- Modelo 2: Urbana Plegable -->
+                    <article class="tarjeta-flota">
+                        <img src="../img/urbana-plegable.jpg" alt="Urbana Plegable">
+                        <div class="tarjeta-contenido">
+                            <h3>Urbana Plegable</h3>
+                            <p>Se dobla en segundos; ideal para combinar con el metro.</p>
+                            <span class="precio">$12.000 <small>/ hora</small></span>
+                            <a href="paginas/reservas.html" class="btn">Reservar</a>
+                        </div>
+                    </article>
+            
+                    <!-- Modelo 3: Montaña Trail -->
+                    <article class="tarjeta-flota">
+                        <img src="../img/montana-trail.jpg" alt="Montaña Trail">
+                        <div class="tarjeta-contenido">
+                            <h3>Montaña Trail</h3>
+                            <p>Suspensión delantera y 21 cambios para las subidas.</p>
+                            <span class="precio">$15.000 <small>/ hora</small></span>
+                            <a href="paginas/reservas.html" class="btn">Reservar</a>
+                        </div>
+                    </article>
+            
+                    <!-- Modelo 4: Gravel Aventura -->
+                    <article class="tarjeta-flota">
+                        <img src="../img/gravel-aventura.jpg" alt="Gravel Aventura">
+                        <div class="tarjeta-contenido">
+                            <h3>Gravel Aventura</h3>
+                            <p>Para rutas mixtas de asfalto y destapado.</p>
+                            <span class="precio">$18.000 <small>/ hora</small></span>
+                            <a href="paginas/reservas.html" class="btn">Reservar</a>
+                        </div>
+                    </article>
+            
+                    <!-- Modelo 5: Eléctrica Urbana (Con etiqueta "Nuevo" que ya creamos antes) -->
+                    <article class="tarjeta-flota tarjeta">
+                        <span class="etiqueta-nuevo">Nuevo</span>
+                        <img src="../img/electrica-urbana.jpg" alt="Eléctrica Urbana">
+                        <div class="tarjeta-contenido">
+                            <h3>Eléctrica Urbana</h3>
+                            <p>Asistencia eléctrica con 45 km de autonomía.</p>
+                            <span class="precio">$25.000 <small>/ hora</small></span>
+                            <a href="paginas/reservas.html" class="btn">Reservar</a>
+                        </div>
+                    </article>
+            
+                    <!-- Modelo 6: Infantil -->
+                    <article class="tarjeta-flota">
+                        <img src="../img/infantil.jpg" alt="Infantil">
+                        <div class="tarjeta-contenido">
+                            <h3>Infantil</h3>
+                            <p>Para niños de 6 a 10 años.</p>
+                            <span class="precio">$8.000 <small>/ hora</small></span>
+                            <a href="paginas/reservas.html" class="btn">Reservar</a>
+                        </div>
+                    </article>
+                    <!-- Modelo 7: Tándem -->
+                    <article class="tarjeta-flota">
+                        <img src="../img/tandem.jpg" alt="Tándem">
+                        <div class="tarjeta-contenido">
+                            <h3>Tándem</h3>
+                            <p>Para dos personas; perfecta para pasear en pareja.</p>
+                            <span class="precio">$20.000 <small>/ hora</small></span>
+                            <a href="paginas/reservas.html" class="btn">Reservar</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <section class="seccion-rutas">
+                <h2>Nuestras rutas guiadas</h2>
+                <div class="rutas-grid">
+            
+                    <!-- Ruta 1 -->
+                    <article class="tarjeta-ruta">
+                        <img src="img/ruta-centro.jpg" alt="Ruta Centro Histórico">
+                        <div class="tarjeta-contenido">
+                            <h3>Centro Histórico</h3>
+                            <span class="nivel-badge nivel-basico">Nivel: Básico</span>
+                            <p>Recorrido por los puntos culturales más emblemáticos de la ciudad.</p>
+                            <a href="paginas/reservas.html" class="btn">Reservar ruta</a>
+                        </div>
+                    </article>
+            
+                    <!-- Ruta 2 -->
+                    <article class="tarjeta-ruta">
+                        <img src="img/ruta-parques.jpg" alt="Ruta Parques del Río">
+                        <div class="tarjeta-contenido">
+                            <h3>Parques del Río</h3>
+                            <span class="nivel-badge nivel-intermedio">Nivel: Intermedio</span>
+                            <p>Paseo verde conectando los principales parques y ciclorrutas urbanas.</p>
+                            <a href="paginas/reservas.html" class="btn">Reservar ruta</a>
+                        </div>
+                    </article>
+            
+                    <!-- Ruta 3 -->
+                    <article class="tarjeta-ruta">
+                        <img src="img/ruta-las-palmas.jpg" alt="Ruta Mirador Palmas">
+                        <div class="tarjeta-contenido">
+                            <h3>Mirador Las Palmas</h3>
+                            <span class="nivel-badge nivel-avanzado">Nivel: Avanzado</span>
+                            <p>Ascenso exigente para ciclistas que buscan desafío y vistas panorámicas.</p>
+                            <a href="paginas/reservas.html" class="btn">Reservar ruta</a>
+                        </div>
+                    </article>
+            
+                </div>
+            </section>
             
         
     </main>    
@@ -118,11 +255,33 @@
     </section>
 
     <footer>
-        <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
-            WhatsApp
-        </a>
-        <p>&copy; 2026 La Bicicleta - Contacto: <a href="mailto:contacto@labicicleta.com">contacto@labicicleta.com</a></p>
-        <p>Derechos reservados</p>
+        <div class="footer_container">
+            <div class="footer-columna">
+                <h3>Rueda Libre</h3>
+                <p>Tu comunidad de ciclismo y movilidad urbana en Medellín.</p>
+            </div>
+            
+            <div class="footer-columna">
+                <h3>Contacto</h3>
+                <p>Teléfono: +57 300 000 0000</p>
+                <p>Correo: contacto@ruedalibre.com</p>
+            </div>
+            
+            <div class="footer-columna">
+                <h3>Horario</h3>
+                <p>Lunes a Viernes: 8:00 a.m. - 6:00 p.m.</p>
+                <p>Sábados y Domingos: 9:00 a.m. - 2:00 p.m.</p>
+            </div>
+            <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                WhatsApp
+            </a>
+            <div class="footer_bottom">
+                <p>&copy; 2026 La Bicicleta - Contacto: <a href="mailto:contacto@labicicleta.com">contacto@labicicleta.com </a></p>
+            <p>Derechos reservados</p>
+            </div>
+            
+        </div>
+        
     </footer>
     
 </body>

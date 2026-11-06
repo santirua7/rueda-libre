@@ -12,16 +12,22 @@
 </head>
 <body>
     <header>
-        <img src="../img/portada.jfif" alt="Rua's logo" width="200">
-        <h1><strong><em>Tarifas Rueda Libre</em></strong></h1>
+        <div class="header_container">
+            <div class="header_logo">
+                <a href="../index.html" >
+                    <img src="../img/portada.jfif" alt="Rua's logo" class="logo_icono">
+                </a>
+                <h1><strong><em>Tarifas Rueda Libre</em></strong></h1>
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../paginas/tarifas.html"  class="activo">Tarifas</a></li>
+                    <li><a href="../paginas/reservas.html">Reservas</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <nav>
-        <ul id="menu">
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="../paginas/tarifas.html"  class="activo">Tarifas</a></li>
-            <li><a href="../paginas/reservas.html">Reservas</a></li>
-        </ul>
-    </nav>
     <main>
         <section id="tarifas-alquiler">
             <table border="1">
@@ -107,7 +113,10 @@
     </aside>
 
     <footer>
-        <p>&copy; 2026 La Bicicleta - Contacto: <a href="mailto:contacto@labicicleta.com">contacto@labicicleta.com</a></p>
+        <div class="footer_bottom">
+            <p>&copy; 2026 La Bicicleta - Contacto: <a href="mailto:contacto@labicicleta.com">contacto@labicicleta.com </a></p>
+            <p>Derechos reservados</p>
+        </div>
     </footer>
 
 </body>

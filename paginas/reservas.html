@@ -11,40 +11,50 @@
 </head>
 <body>
     <header>
-        <img src="../img/portada.jfif" alt="Rua's logo" width="200">
-        <h1><strong>Reserva tu bicicleta</strong></h1>
+        <div class="header_container">
+            <div class="header_logo">
+                <a href="../index.html">
+                    <img src="../img/portada.jfif" alt="Rua's logo" class="logo_icono">
+                </a>
+                <h1><strong>Reserva tu bicicleta</strong></h1>
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../paginas/tarifas.html" >Tarifas y rutas</a></li>
+                    <li><a href="../paginas/reservas.html" class="activo">Reservas</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <nav>
-        <ul id="menu">
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="../paginas/tarifas.html" >Tarifas y rutas</a></li>
-            <li><a href="../paginas/reservas.html" class="activo">Reservas</a></li>
-        </ul>
-    </nav>
 
-    <main>
+    <main class="contenedor-reservas">
         <section id="formulario">
             <form action="#" method="post">
             <fieldset>
                 <legend> Tus datos </legend>
                 <p>
-                    <label for="nombre"> Nombre completo: </label><br>
+                    <label for="nombre"> Nombre completo: </label>
                     <input type="text" id="nombre" name="nombre" required minlenght="3">
                 </p>
-                <p>
-                    <label for="documento"> Documento: </label><br>
-                    <input type="text" id="documento" name="documento" inputmode="numeric" pattern="[0-9]{6,10}" 
+                <div class="fila-doble">
+                    <p>
+                        <label for="documento"> Documento: </label>
+                        <input type="text" id="documento" name="documento" inputmode="numeric" pattern="[0-9]{6,10}" 
                     title="Escribe tu documento, sin espacios" required>
-                </p>
+                    </p>
+                    <p>
+                        <label for="telefono"> Celular: </label>
+                        <input type="tel" id="telefono" name="telefono" inputmode="numeric" pattern="[0-9]{10}"
+                        title="Escribe Celular, sin espacios, 10 numeros" required>
+                    </p>
+                </div>
+                
                 <p>
-                    <label for="correo"> Correo electronico: </label><br>
+                    <label for="correo"> Correo electronico: </label>
                     <input type="email" id="correo" name="correo" required>
                 </p>
-                <p>
-                    <label for="telefono"> Celular (10 digitos): </label><br>
-                    <input type="tel" id="telefono" name="telefono" inputmode="numeric" pattern="[0-9]{10}"
-                        title="Escribe Celular, sin espacios, 10 numeros" required>
-                </p>
+                
                 
             </fieldset>
             <fieldset>
@@ -59,15 +69,15 @@
                         </select>
                     </p>
                     <p>
-                        <label for="Cantidad"> Cantidad de bicicletas: </label><br>
+                        <label for="Cantidad"> Cantidad de bicicletas: </label>
                         <input type="number" id="cantidad" name="cantidad" min="1" max="6">
                     </p>
                     <p>
-                        <label for="fecha"> Fecha de reserva: </label><br>
+                        <label for="fecha"> Fecha de reserva: </label>
                         <input type="date" id="fecha" name="fecha" min="2026-11-01" max="2026-12-31">
                     </p>
                     <p>
-                        <label for="mensaje">Mensaje / Solicitud especial: </label><br>
+                        <label for="mensaje">Mensaje / Solicitud especial: </label>
                         <textarea id="mensaje" name="mensaje" rows="4" minlength="10" maxlength="300" required placeholder="Escribe si necesitas casco extra, silla para niños, etc."></textarea>
                     </p>
             </fieldset>
@@ -85,31 +95,40 @@
             </fieldset>
             </form>
         </section>
+        <div class="columna-lateral">
+            <section id="contacto">
+
+                <h2>Contacto</h2>
+                <p>Para dudas o solicitudes especiales, escríbenos a:
+                    <a href="mailto:contacto@labicicleta.com">contacto@labicicleta.com</a>
+                </p>
+            </section>
+
+            <aside id="horario">
+
+                <h2>Horario de atención</h2>
+                <dl> <!--lista de definicion-->            
+                    <dt>Lunes a Viernes</dt>
+                    <dd>08:00 - 20:00</dd>
+    
+                    <dt>Sábados</dt>
+                    <dd>09:00 - 18:00</dd>
+                
+                    <dt>Domingos y Festivos</dt>
+                <dd>09:00 - 14:00</dd>        
+                </dl>
+            </aside>
+        </div>
         
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>Para dudas o solicitudes especiales, escríbenos a:
-                <a href="mailto:contacto@labicicleta.com">contacto@labicicleta.com</a>
-            </p>
-        </section>
     </main>
     
-    <aside id="horario">        
-        <h2>Horario de atención</h2>
-        <dl> <!--lista de definicion-->            
-            <dt>Lunes a Viernes</dt>
-            <dd>08:00 - 20:00</dd>
-    
-            <dt>Sábados</dt>
-            <dd>09:00 - 18:00</dd>
-                
-            <dt>Domingos y Festivos</dt>
-            <dd>09:00 - 14:00</dd>        
-        </dl>
-    </aside>    
+        
     
     <footer>
-        <p>&copy; 2026 La Bicicleta - Contacto: <a href="mailto:contacto@labicicleta.com">contacto@labicicleta.com</a></p>
+        <div class="footer_bottom">
+            <p>&copy; 2026 La Bicicleta - Contacto: <a href="mailto:contacto@labicicleta.com">contacto@labicicleta.com </a></p>
+            <p>Derechos reservados</p>
+        </div>
     </footer>
 
 </body>
