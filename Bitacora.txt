@@ -276,3 +276,30 @@ se declararon variables globales, familias tipograficas que agrupan los tipos de
 se agrego estilos al encabezado y navegacion, tarjetas y servicios, tablas y formularios, y a los botones que se vean mas interactivos.
 se agrego estilo al pie de pagina.
 
+Layout
+Se agrego diseño responsive, mejoro estetica, se agrego grid a nuestras flotas y nuestras rutas aplicando media queries
+
+mobile first
+se ajustaron media queries, se probaron diferentes formas de ajustar las tablas y formulariosde tal forma que se ajustaran en un movil o tablet
+
+Breakpoints probados: 360px (Móvil), 768px (Tablet), 1280px (Escritorio)
+
+1. Breakpoint 360 px (Móvil) — Desbordamiento horizontal en la tabla de tarifas.
+Problema: En pantallas estrechas de 360 px, la tabla de recorridos guiados (con 5 columnas) superaba el ancho disponible de la pantalla. Esto provocaba 
+un corte lateral en las celdas de la derecha y obligaba al usuario a realizar un desplazamiento horizontal no deseado.
+
+Se ajustaron los estilos base (móvil) de las celdas reduciendo el padding a 0.5rem 0.6rem y la fuente a 0.85rem.
+
+2. Breakpoint 360 px (Móvil) — Cabecera comprimida y menú fragmentado en múltiples líneas.
+Problema: El título del negocio y la imagen del logo quedaban alineados horizontalmente de manera apretada, haciendo que el menú de navegación (Inicio, 
+Tarifas y rutas, Reservas) saltara a una segunda línea desalineada y se viera amontonado en la franja azul.
+
+Bajo la metodología Mobile-First, se estableció que .header_container en pantallas móviles utilice flex-direction: column para apilar el bloque del
+logo arriba y la lista del menú justo debajo, ambos perfectamente centrados.
+
+3. Breakpoints 768 px (Tablet) y 1280 px (Escritorio) — Disposición de campos en el formulario de reservas.
+Problema: En pantallas grandes (escritorio), los campos cortos del formulario (como Documento y Celular) ocupaban todo el ancho vertical disponible
+por separado, desaprovechando el espacio horizontal del contenedor. En móviles de 360 px, al colocarlos lado a lado, se comprimían demasiado.
+
+En los estilos base (Mobile-First), se configuró .fila-doble con flex-direction: column, apilando Documento y Celular verticalmente para móviles de 
+360 px.
