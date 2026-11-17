@@ -1,135 +1,210 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <title>Reservas - Rueda Libre</title>
+
+    <!-- Bootstrap 5.3 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Tipografías y hoja de estilos propia cargada DESPUÉS de Bootstrap -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
-    <header>
-        <div class="header_container">
-            <div class="header_logo">
+
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- Barra de navegación superior con tu color azul oscuro -->
+    <header class="text-white py-3 shadow-sm sticky-top" style="background-color: #14213D;">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <div class="d-flex align-items-center gap-2">
                 <a href="../index.html">
-                    <img src="../img/portada.jfif" alt="Rua's logo" class="logo_icono">
+                    <img src="../img/portada.jfif" alt="Rueda Libre logo" class="rounded-circle object-fit-cover"
+                        width="40" height="40">
                 </a>
-                <h1><strong>Reserva tu bicicleta</strong></h1>
+                <h1 class="h3 m-0"><strong><em>Rueda libre</em></strong></h1>
             </div>
             <nav>
-                <ul id="menu">
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="../paginas/tarifas.html" >Tarifas y rutas</a></li>
-                    <li><a href="../paginas/reservas.html" class="activo">Reservas</a></li>
+                <ul class="nav gap-3 align-items-center m-0 list-unstyled">
+                    <li><a href="../index.html" class="nav-link text-white-50">Inicio</a></li>
+                    <li><a href="../paginas/tarifas.html" class="nav-link text-white-50">Tarifas</a></li>
+                    <li><a href="../paginas/reservas.html" class="nav-link text-white active fw-semibold">Reservas</a></li>
+                    <!-- Botón de ver flota actualizado a amarillo (warning) -->
+                    <li><a href="../index.html#flota" class="btn btn-warning text-dark fw-semibold btn-sm">Ver flota</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="contenedor-reservas">
-        <section id="formulario">
-            <form action="#" method="post">
-            <fieldset>
-                <legend> Tus datos </legend>
-                <p>
-                    <label for="nombre"> Nombre completo: </label>
-                    <input type="text" id="nombre" name="nombre" required minlenght="3">
-                </p>
-                <div class="fila-doble">
-                    <p>
-                        <label for="documento"> Documento: </label>
-                        <input type="text" id="documento" name="documento" inputmode="numeric" pattern="[0-9]{6,10}" 
-                    title="Escribe tu documento, sin espacios" required>
-                    </p>
-                    <p>
-                        <label for="telefono"> Celular: </label>
-                        <input type="tel" id="telefono" name="telefono" inputmode="numeric" pattern="[0-9]{10}"
-                        title="Escribe Celular, sin espacios, 10 numeros" required>
-                    </p>
-                </div>
-                
-                <p>
-                    <label for="correo"> Correo electronico: </label>
-                    <input type="email" id="correo" name="correo" required>
-                </p>
-                
-                
-            </fieldset>
-            <fieldset>
-                    <legend>Tu alquiler </legend>
-                    <p>
-                        <label for="tipo"> Tipo de bicicleta</label>
-                        <select id="tipo" name="tipo" required>
-                            <option value="">Selecciona una opcion</option>
-                            <option value="urbana">Bicicleta Urbana</option>
-                            <option value="montana">Bicicleta de Montaña</option>
-                            <option value="electrica">Bicicleta Electrica</option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="Cantidad"> Cantidad de bicicletas: </label>
-                        <input type="number" id="cantidad" name="cantidad" min="1" max="6">
-                    </p>
-                    <p>
-                        <label for="fecha"> Fecha de reserva: </label>
-                        <input type="date" id="fecha" name="fecha" min="2026-11-01" max="2026-12-31">
-                    </p>
-                    <p>
-                        <label for="mensaje">Mensaje / Solicitud especial: </label>
-                        <textarea id="mensaje" name="mensaje" rows="4" minlength="10" maxlength="300" required placeholder="Escribe si necesitas casco extra, silla para niños, etc."></textarea>
-                    </p>
-            </fieldset>
-            <fieldset>
-                <legend>Confirmación</legend>
-                <p>
-                    <label for="terminos">
-                        <input type="checkbox" id="terminos" name="terminos" value="si" required>
-                        Acepto los términos y condiciones del servicio de alquiler.
-                    </label>
-                </p>
-                <p>
-                    <button type="submit">Enviar reserva</button>
-                </p>
-            </fieldset>
-            </form>
-        </section>
-        <div class="columna-lateral">
-            <section id="contacto">
-
-                <h2>Contacto</h2>
-                <p>Para dudas o solicitudes especiales, escríbenos a:
-                    <a href="mailto:contacto@labicicleta.com">contacto@labicicleta.com</a>
-                </p>
-            </section>
-
-            <aside id="horario">
-
-                <h2>Horario de atención</h2>
-                <dl> <!--lista de definicion-->            
-                    <dt>Lunes a Viernes</dt>
-                    <dd>08:00 - 20:00</dd>
-    
-                    <dt>Sábados</dt>
-                    <dd>09:00 - 18:00</dd>
-                
-                    <dt>Domingos y Festivos</dt>
-                <dd>09:00 - 14:00</dd>        
-                </dl>
-            </aside>
+    <!-- Encabezado de página -->
+    <section class="text-white py-4 mb-4 shadow" style="background-color: #14213D">
+        <div class="container text-center">
+            <h2 class="display-6 fw-bold mb-1">Reserva tu bicicleta</h2>
+            <p class="text-warning mb-0">Completa tus datos y asegura tu unidad para rodar por la ciudad.</p>
         </div>
-        
+    </section>
+
+    <!-- Contenido principal dividido en dos columnas (Formulario + Lateral) -->
+    <main class="container flex-grow-1 mb-5">
+        <div class="row g-4">
+
+            <!-- Columna del Formulario -->
+            <div class="col-12 col-lg-8">
+                <div class="bg-white p-4 p-md-5 border rounded-3 shadow-sm">
+                    <form action="#" method="post" class="needs-validation" novalidate>
+
+                        <!-- Bloque 1: Tus datos -->
+                        <fieldset class="mb-4">
+                            <legend class="h5 fw-bold pb-2 border-bottom mb-3" style="color: #0d1b2a;">Tus datos
+                            </legend>
+
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label fw-semibold">Nombre completo:</label>
+                                <input type="text" id="nombre" name="nombre" class="form-control" required minlength="3"
+                                    placeholder="Ej. Juan Pérez">
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-12 col-md-6">
+                                    <label for="documento" class="form-label fw-semibold">Documento:</label>
+                                    <input type="text" id="documento" name="documento" class="form-control"
+                                        inputmode="numeric" pattern="[0-9]{6,10}"
+                                        title="Escribe tu documento, sin espacios" required placeholder="Sin espacios">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="telefono" class="form-label fw-semibold">Celular:</label>
+                                    <input type="tel" id="telefono" name="telefono" class="form-control"
+                                        inputmode="numeric" pattern="[0-9]{10}"
+                                        title="Escribe Celular, sin espacios, 10 números" required
+                                        placeholder="10 números">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="correo" class="form-label fw-semibold">Correo electrónico:</label>
+                                <input type="email" id="correo" name="correo" class="form-control" required
+                                    placeholder="correo@ejemplo.com">
+                            </div>
+                        </fieldset>
+
+                        <!-- Bloque 2: Tu alquiler -->
+                        <fieldset class="mb-4">
+                            <legend class="h5 fw-bold pb-2 border-bottom mb-3" style="color: #0d1b2a;">Tu alquiler
+                            </legend>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-12 col-md-6">
+                                    <label for="tipo" class="form-label fw-semibold">Tipo de bicicleta:</label>
+                                    <select id="tipo" name="tipo" class="form-select" required>
+                                        <option value="">Selecciona una opción</option>
+                                        <option value="urbana">Bicicleta Urbana</option>
+                                        <option value="montana">Bicicleta de Montaña</option>
+                                        <option value="electrica">Bicicleta Eléctrica</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="cantidad" class="form-label fw-semibold">Cantidad de bicicletas:</label>
+                                    <input type="number" id="cantidad" name="cantidad" class="form-control" min="1"
+                                        max="6" value="1" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="fecha" class="form-label fw-semibold">Fecha de reserva:</label>
+                                <input type="date" id="fecha" name="fecha" class="form-control" min="2026-11-01"
+                                    max="2026-12-31" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label fw-semibold">Mensaje / Solicitud
+                                    especial:</label>
+                                <textarea id="mensaje" name="mensaje" class="form-control" rows="4" minlength="10"
+                                    maxlength="300" required
+                                    placeholder="Escribe si necesitas casco extra, silla para niños, etc."></textarea>
+                            </div>
+                        </fieldset>
+
+                        <!-- Bloque 3: Confirmación -->
+                        <fieldset class="mb-4">
+                            <legend class="h5 fw-bold pb-2 border-bottom mb-3" style="color: #0d1b2a;">Confirmación
+                            </legend>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" id="terminos" name="terminos" value="si" class="form-check-input"
+                                    required>
+                                <label for="terminos" class="form-check-label text-muted">
+                                    Acepto los términos y condiciones del servicio de alquiler.
+                                </label>
+                            </div>
+
+                            <button type="submit"
+                                class="w-100 bg-warning text-dark fw-bold py-3 rounded-3 border-0 shadow-sm">
+                                Enviar reserva
+                            </button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Columna Lateral (Contacto y Horarios) -->
+            <div class="col-12 col-lg-4">
+                <div class="d-flex flex-column gap-4">
+
+                    <!-- Tarjeta de Contacto -->
+                    <section id="contacto" class="bg-white p-4 border rounded-3 shadow-sm">
+                        <h2 class="h5 fw-bold mb-3" style="color: #0d1b2a;">Contacto</h2>
+                        <p class="text-muted mb-0">
+                            Para dudas o solicitudes especiales, escríbenos a: <br>
+                            <a href="mailto:contacto@labicicleta.com" class="text-decoration-none fw-semibold"
+                                style="color: #0d1b2a;">contacto@labicicleta.com</a>
+                        </p>
+                    </section>
+
+                    <!-- Tarjeta de Horario (Usando elementos semánticos de lista de definición) -->
+                    <aside id="horario" class="p-4 rounded-3 text-white shadow-sm" style="background-color: #14213D;">
+                        <h2 class="h5 fw-bold text-warning mb-3">Horario de atención</h2>
+                        <dl class="mb-0">
+                            <div class="mb-2">
+                                <dt class="fw-semibold text-white">Lunes a Viernes</dt>
+                                <dd class="text-white-50 mb-0">08:00 - 20:00</dd>
+                            </div>
+                            <div class="mb-2">
+                                <dt class="fw-semibold text-white">Sábados</dt>
+                                <dd class="text-white-50 mb-0">09:00 - 18:00</dd>
+                            </div>
+                            <div>
+                                <dt class="fw-semibold text-white">Domingos y Festivos</dt>
+                                <dd class="text-white-50 mb-0">09:00 - 14:00</dd>
+                            </div>
+                        </dl>
+                    </aside>
+
+                </div>
+            </div>
+
+        </div>
     </main>
-    
-        
-    
-    <footer>
-        <div class="footer_bottom">
-            <p>&copy; 2026 La Bicicleta - Contacto: <a href="mailto:contacto@labicicleta.com">contacto@labicicleta.com </a></p>
-            <p>Derechos reservados</p>
+
+    <!-- Pie de página consistente -->
+    <footer class="text-white py-4 mt-auto" style="background-color: #14213D;">
+        <div class="container text-center text-white-50 small">
+            <p class="mb-1">&copy; 2026 La Bicicleta - Contacto: <a href="mailto:contacto@labicicleta.com"
+                    class="text-white-50">contacto@labicicleta.com</a>[cite: 5]</p>
+            <p class="mb-0">Derechos reservados[cite: 5]</p>
         </div>
     </footer>
 
+    <!-- Bootstrap 5.3 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -303,3 +303,149 @@ por separado, desaprovechando el espacio horizontal del contenedor. En móviles 
 
 En los estilos base (Mobile-First), se configuró .fila-doble con flex-direction: column, apilando Documento y Celular verticalmente para móviles de 
 360 px.
+
+
+Bitacora Rueda libre Bootstrap
+Tiempo invertido
+Menos de 30 a 45 minutos ensamblando los componentes directamente en el HTML mediante clases predefinidas 
+(row, col-12, h-100, d-flex, shadow-sm), lo que agiliza drásticamente la maquetación inicial.
+
+Comparativa de líneas de CSS
+    Líneas de CSS en la versión propia (aproximadas):
+
+    Se requerían al menos 25 a 35 líneas de código CSS dedicadas exclusivamente a la distribución de la flota y las tarjetas (selector contenedor, 
+    regla de columnas flexibles, media queries de adaptación y estilos de contenedor individual).
+
+Clases usadas ahora con Bootstrap:
+
+    0 líneas de CSS nuevo. Todo se resolvió directamente en el marcado HTML utilizando clases de utilidad y componentes nativos del framework:
+
+    row g-4 (para la retícula y el espaciado o gutters).
+
+    col-12 col-sm-6 col-lg-4 col-xl-3 (para la adaptación responsiva en diferentes anchos de pantalla).
+
+    h-100 d-flex flex-column gap-2 p-3 border rounded-3 (para la estructura interna, altura uniforme y alineación flexible de cada tarjeta).
+
+    mt-auto align-self-start (para posicionar el botón de forma dinámica al final de la tarjeta).
+
+¿Qué te dio Bootstrap sin esfuerzo?
+
+    Diseño responsivo precalculado: Los puntos de interrupción (breakpoints) y el sistema de rejilla (col-*) resuelven de inmediato cómo se acomodan 
+    las tarjetas en móviles, tablets y computadoras sin tener que escribir media queries manuales.
+
+    Consistencia visual y estética rápida: Sombras (shadow-sm), bordes redondeados (rounded-3), espaciados normalizados (gap-2, p-3) y paletas de 
+    colores listas para usar (bg-warning, text-success).
+
+    Alineación elástica automática: Gracias a h-100 combinado con d-flex flex-column y mt-auto, Bootstrap se encarga de estirar las tarjetas de forma 
+    uniforme en una misma fila y empujar los botones al borde inferior de manera limpia, incluso si los textos tienen longitudes distintas.
+
+¿Qué control perdiste?
+    Control fino y a medida de los detalles: Al depender de una librería de terceros, las medidas de los espaciados, los grosores de los bordes o 
+    las escalas de colores quedan limitadas a los valores estándar de Bootstrap (a menos que sobrescribas variables de Sass o añadas CSS personalizado).
+
+    Independencia del código: El HTML se vuelve más pesado y lleno de clases utilitarias en línea (a menudo conocido como utility-first o HTML "verboso"), 
+    lo que puede dificultar la lectura rápida de la estructura si no se mantiene un orden estricto.
+
+    Precisión milimétrica en efectos únicos: Si buscas una animación de transición muy específica, un diseño de sombra totalmente personalizado o un 
+    comportamiento fuera de lo estándar que el framework no contemple de forma nativa, requiere obligatoriamente escribir CSS adicional para anular o 
+    complementar las reglas de Bootstrap.
+
+
+clases que encontraste buscando en la documentación
+
+    text-truncate
+
+Aplica propiedades CSS para truncar texto largo. Si un título o párrafo es demasiado extenso y excede el espacio de su contenedor, la clase 
+corta el texto sobrante automáticamente y le añade puntos suspensivos (...) al final para evitar que rompa el diseño visual.
+
+    img-fluid
+
+Convierte una imagen en responsiva. Aplica automáticamente max-width: 100% y height: auto para que la imagen se adapte de forma fluida al ancho 
+de su contenedor padre, evitando que se desborde o rompa el diseño en pantallas pequeñas.
+
+    visually-hidden
+
+Oculta visualmente un elemento en la pantalla de forma que los usuarios comunes no lo verán, pero lo mantiene accesible para los lectores de 
+pantalla. Es una herramienta clave de accesibilidad web (a11y) para añadir contexto o etiquetas que las tecnologías de asistencia necesitan leer.
+
+    position-sticky
+
+Posiciona un elemento utilizando el comportamiento sticky de CSS (position: sticky). Hace que el elemento se comporte de manera normal según el 
+flujo de la página hasta que el usuario hace scroll hasta cierta posición, momento en el cual se fija o "pega" a la pantalla (muy utilizado en 
+barras de navegación o menús laterales).
+
+    container
+
+Es el contenedor base y obligatorio en Bootstrap. container crea una caja centrada con un ancho máximo adaptativo que va cambiando según el 
+tamaño de la pantalla, mientras que container-fluid abarca siempre el 100% del ancho disponible de la pantalla. Sirven para envolver todo el contenido 
+y mantener los márgenes laterales correctos.
+
+Al integrar Bootstrap 5 con css, es habitual que aparezcan declaraciones tachadas en el inspector de DevTools.
+
+Color y subrayado por defecto en enlaces (a)
+  DevTools: Al inspeccionar los botones hechos con etiquetas <a> (como "Reservar ahora" o "Ver flota"), la propiedad color de tus clases previas aparecía
+  tachada por el selector nativo de Bootstrap, volviendo los textos azules y subrayados.
+
+  Causa: Bootstrap aplica estilos globales directamente sobre la etiqueta <a> usando variables CSS en su hoja.
+
+  Solución: Se aplicaron las clases utilitarias text-dark y text-decoration-none directamente en los enlaces tipo botón, y text-white / text-white-50 en 
+  la barra de navegación, anulando el estilo base del enlace sin necesidad de usar !important en css.
+
+Márgenes inferiores en encabezados y párrafos
+  DevTools: En el encabezado y dentro de las tarjetas de flota y beneficios, los elementos <h1>, <h3> y <p> mostraban un espacio inferior no deseado que 
+  desalineaba verticalmente los botones y títulos, tachando el reinicio universal que tenía en css debido al orden de carga.
+
+  Causa: El archivo de Bootstrap redefine margin-top: 0; margin-bottom: 0.5rem; para todos los títulos y margin-bottom: 1rem; para los párrafos con mayor 
+  especificidad en la cascada.
+
+  Solución: Se añadieron las utilidades de espaciado m-0 (en los títulos del navbar) y mb-0 (en los párrafos descriptivos de las tarjetas), y se 
+  estructuraron los contenedores con d-flex flex-column gap-2 junto con mt-auto en los botones para alinearlos siempre al fondo.
+
+Tamaño de letra y jerarquía tipográfica
+  DevTools: Al migrar el encabezado principal y los títulos de las tarjetas de la flota, los tamaños personalizados definidos en css quedaron tachados o 
+  desproporcionados frente a las reglas responsivas de Bootstrap, haciendo que el logo de texto compitiera visualmente con los títulos de sección.
+
+  Causa: Bootstrap escala automáticamente los encabezados basándose en el ancho del viewport mediante funciones, sobrescribiendo tamaños fijos en px o 
+  rem previos.
+
+  Solución: Se estandarizó la escala tipográfica utilizando las clases utilitarias de tamaño de Bootstrap: h3 para el título de marca en el navbar, 
+  display-4 / display-5 para los títulos principales de portada, y fs-5 para los títulos internos de cada bicicleta o ruta, eliminando reglas duplicadas 
+  en css.
+
+Comparativa de Evolución:
+
+  Líneas de código en css:
+
+Versión 1.5: Aproximadamente 180 a 220 líneas de CSS personalizado (incluyendo selectores de tarjetas manuales, reglas de flexbox a medida, diseño de 
+grillas artesanales, media queries y variables de color globales).
+
+Versión Actual: Reducido a menos de 50 líneas de CSS específico o complementario, ya que la mayor parte de la estructura, grillas, tipografías responsivas, 
+tarjetas y componentes visuales se manejan mediante las clases utilitarias de Bootstrap 5.3.3.
+
+Tiempo invertido en cada versión:
+
+Versión 1.5: Mayor tiempo de desarrollo inicial (aprox. 4 a 6 horas), enfocado en redactar desde cero los selectores, ajustar los márgenes de las tarjetas y 
+configurar manualmente las media queries para adaptar la pantalla en dispositivos móviles y de escritorio.
+
+Versión Actual: Menor tiempo de integración y refactorización (aprox. 1 a 2 horas), aprovechando el sistema preconfigurado de componentes de Bootstrap y 
+ajustando únicamente los detalles precisos de marca.
+
+  Ventajas observadas:
+
+Versión 1.5: Control absoluto sobre cada propiedad de diseño, permitiendo comprender la lógica de posicionamiento y selectores CSS a nivel nativo.
+
+Versión Actual: Código HTML y CSS mucho más limpio y fácil de mantener, eliminación del exceso de contenedores anidados, diseño 100% responsivo inmediato, 
+validación nativa de formularios mejorada con JavaScript y una marcada consistencia visual en todo el sitio.
+
+  Desventajas observadas:
+
+Versión 1.5: Alto riesgo de duplicación de código CSS al crear componentes personalizados y mayor complejidad para mantener la adaptabilidad en distintas 
+pantallas sin romper los diseños.
+
+Versión Actual: Curva de aprendizaje inicial para memorizar o consultar las clases de utilidad de Bootstrap y menor personalización nativa profunda sin 
+sobrescribir las reglas del framework.
+
+Conclusión:
+La migración y refactorización del proyecto Rueda Libre hacia Bootstrap 5 representa un salto cualitativo en términos de eficiencia de desarrollo y buenas 
+prácticas de diseño. Al delegar la estructura base y la responsividad al framework, se logró simplificar significativamente el archivo css, evitando bloques 
+redundantes y garantizando una experiencia de usuario fluida, limpia y profesional en todas las secciones del sitio web.

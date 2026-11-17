@@ -3,121 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarifas Rueda libre</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <title>Tarifas Rueda Libre</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-
+    
+    <!-- Bootstrap 5.3 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body>
-    <header>
-        <div class="header_container">
-            <div class="header_logo">
-                <a href="../index.html" >
-                    <img src="../img/portada.jfif" alt="Rua's logo" class="logo_icono">
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- Barra de navegación con colores oscuros nativos de Bootstrap -->
+    <header class="text-white py-3 shadow-sm sticky-top " style="background-color: #14213D;">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <div class="d-flex align-items-center gap-2">
+                <a href="../index.html" class="text-decoration-none">
+                    <img src="../img/portada.jfif" alt="Rua's logo" class="rounded-circle object-fit-cover" width="40" height="40">
                 </a>
-                <h1><strong><em>Tarifas Rueda Libre</em></strong></h1>
+                <h1 class="h3 m-0"><strong><em>Rueda libre</em></strong></h1>
             </div>
             <nav>
-                <ul id="menu">
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="../paginas/tarifas.html"  class="activo">Tarifas</a></li>
-                    <li><a href="../paginas/reservas.html">Reservas</a></li>
+                <ul class="nav gap-3 align-items-center m-0 list-unstyled">
+                    <li><a href="../index.html" class="nav-link text-white-50">Inicio</a></li>
+                    <li><a href="../paginas/tarifas.html" class="nav-link text-white active fw-semibold">Tarifas</a></li>
+                    <li><a href="../paginas/reservas.html" class="nav-link text-white-50">Reservas</a></li>
+                    <li><a href="../index.html#flota" class="btn btn-warning text-dark fw-semibold btn-sm">Ver flota</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <main>
-        <section id="tarifas-alquiler">
-            <table border="1">
-                <caption><strong>Todas Nuestras Tarifas</strong></caption>
-                <thead> 
-                    <tr>
-                        <th scope="col">Tipo de Bicicleta</th>
-                        <th scope="col">1 Hora</th>
-                        <th scope="col">Medio Dia (4H)</th>
-                        <th scope="col">Dia Completo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Urbana</th>
-                        <td>$10.000 </td>
-                        <td>$30.000</td>
-                        <td>$45.000</td>                
-                    </tr>
-                    <tr>
-                        <th scope="row">Montaña</th>
-                        <td>$15.000 </td>
-                        <td>$45.000</td>
-                        <td>$70.000</td>
-                    </tr> 
-                    <tr>
-                        <th scope="row">Electrica</th>
-                        <td>$25.000 </td>
-                        <td>$70.000</td>
-                        <td>$110.000</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        
-        <section id="tarifas_recorridos">
-            <h2>Tarifa de recorridos, rutas y bicicletas</h2>
-            <table border="1">
-                <caption><strong>Recorridos guiados</strong></caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Recorrido </th>
-                            <th scope="col">Distancia</th>
-                            <th scope="col">Duracion</th>
-                            <th scope="col">Nivel</th>
-                            <th scope="col">Precio por persona</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Rios y parques</td>
-                            <td>12km</td>
-                            <td>2 horas</td>
-                            <td>Facil</td>
-                            <td>$45.000</td>
-                        </tr>
-                        <tr>
-                            <td>Sabores de barrio</td>
-                            <td>12km</td>
-                            <td>3 horas</td>
-                            <td>Medio</td>
-                            <td>$60.000</td>
-                        </tr>
-                        <tr>
-                            <td>Reto Las Palmas</td>
-                            <td>25km</td>
-                            <td>4 horas</td>
-                            <td>Dificil</td>
-                            <td>$85.000</td>
-                        </tr>
-                    </tbody>
-            </table>
-            <p>
-                <a href="../paginas/reservas.html">Reservar ahora</a><br>
-            </p>
-        </section>
-    </main>
-    <aside>
-        <h3>Informacion importante</h3>
-        <p>
-            Todas las tarifas incluyen casco  candado. Los recorridos salen sabados y domingos a las 7:00 AM. Que llevar: ropa comoda, agua, protector solar y documento de identidad
-        </p>
-    </aside>
 
-    <footer>
-        <div class="footer_bottom">
-            <p>&copy; 2026 La Bicicleta - Contacto: <a href="mailto:contacto@labicicleta.com">contacto@labicicleta.com </a></p>
-            <p>Derechos reservados</p>
+    <!-- Encabezado de página -->
+    <section class="text-white py-4 mb-5 shadow-sm" style="background-color: #14213D;">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-2">Tarifas Rueda Libre</h2>
+            <p class="text-warning mb-0">Planes flexibles por horas, días o recorridos guiados por Medellín.</p>
+        </div>
+    </section>
+
+    <main class="container mb-5 flex-grow-1">
+        <div class="row g-4">
+            <!-- Columna Principal: Tablas de Tarifas -->
+            <div class="col-12 col-lg-8">
+                
+                <!-- Tabla 1: Tarifas de Alquiler -->
+                <section id="tarifas-alquiler" class="bg-white p-4 rounded-3 border shadow-sm mb-4">
+                    <h3 class="h4 fw-bold mb-3">Alquiler de Bicicletas</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered align-middle mb-0 caption-top">
+                            <caption class="text-muted"><strong>Todas Nuestras Tarifas</strong></caption>
+                            <thead class="table-dark"> 
+                                <tr>
+                                    <th scope="col">Tipo de Bicicleta</th>
+                                    <th scope="col">1 Hora</th>
+                                    <th scope="col">Medio Día (4H)</th>
+                                    <th scope="col">Día Completo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Urbana</th>
+                                    <td>$10.000</td>
+                                    <td>$30.000</td>
+                                    <td>$45.000</td>                
+                                </tr>
+                                <tr>
+                                    <th scope="row">Montaña</th>
+                                    <td>$15.000</td>
+                                    <td>$45.000</td>
+                                    <td>$70.000</td>
+                                </tr> 
+                                <tr>
+                                    <th scope="row">Eléctrica</th>
+                                    <td>$25.000</td>
+                                    <td>$70.000</td>
+                                    <td>$110.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                
+                <!-- Tabla 2: Tarifas de Recorridos -->
+                <section id="tarifas_recorridos" class="bg-white p-4 rounded-3 border shadow-sm">
+                    <h3 class="h4 fw-bold mb-3">Tarifa de recorridos, rutas y bicicletas</h3>
+                    <div class="table-responsive mb-4">
+                        <table class="table table-bordered align-middle mb-0 caption-top">
+                            <caption class="text-muted"><strong>Recorridos guiados</strong></caption>
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">Recorrido</th>
+                                    <th scope="col">Distancia</th>
+                                    <th scope="col">Duración</th>
+                                    <th scope="col">Nivel</th>
+                                    <th scope="col">Precio por persona</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ríos y parques</td>
+                                    <td>12 km</td>
+                                    <td>2 horas</td>
+                                    <td>Fácil</td>
+                                    <td>$45.000</td>
+                                </tr>
+                                <tr>
+                                    <td>Sabores de barrio</td>
+                                    <td>12 km</td>
+                                    <td>3 horas</td>
+                                    <td>Medio</td>
+                                    <td>$60.000</td>
+                                </tr>
+                                <tr>
+                                    <td>Reto Las Palmas</td>
+                                    <td>25 km</td>
+                                    <td>4 horas</td>
+                                    <td>Difícil</td>
+                                    <td>$85.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <a href="../paginas/reservas.html" class="d-inline-block bg-warning text-dark fw-semibold px-4 py-2 rounded text-decoration-none shadow-sm">
+                        Reservar ahora
+                    </a>
+                </section>
+
+            </div>
+
+            <!-- Columna Lateral: Información Importante (Aside) -->
+            <div class="col-12 col-lg-4">
+                <aside class="bg-white p-4 rounded-3 border shadow-sm border-start border-warning border-4">
+                    <h3 class="h5 fw-bold mb-3">Información importante</h3>
+                    <ul class="list-unstyled text-muted mb-0 d-flex flex-column gap-2">
+                        <li><strong>Seguridad:</strong> Todas las tarifas incluyen casco y candado sin costo adicional.</li>
+                        <li><strong>Horarios de salida:</strong> Los recorridos salen sábados y domingos a las 7:00 AM.</li>
+                        <li><strong>¿Qué llevar?:</strong> Ropa cómoda, agua, protector solar y documento de identidad.</li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de página unificado -->
+    <footer class=" text-white py-4 mt-auto" style="background-color: #14213D;">
+        <div class="container">
+            <div class="row g-4 justify-content-between align-items-center">
+                <div class="col-12 col-md-4">
+                    <h3 class="h5">Rueda Libre</h3>
+                    <p class="text-white-50 small mb-0">Tu comunidad de ciclismo y movilidad urbana en Medellín.</p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <h3 class="h5">Contacto y Horario</h3>
+                    <p class="text-white-50 small mb-1">Teléfono: +57 300 000 0000</p>
+                    <p class="text-white-50 small mb-0">Lunes a Viernes: 8:00 a.m. - 6:00 p.m.</p>
+                </div>
+                <div class="col-12 col-md-4 text-md-end">
+                    <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="btn btn-success btn-sm">
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+            <hr class="border-secondary my-3">
+            <div class="text-center text-white-50 small">
+                <p class="mb-1">&copy; 2026 Rueda Libre - Contacto: <a href="mailto:contacto@labicicleta.com" class="text-white-50">contacto@ruedalibre.com</a></p>
+                <p class="mb-0">Derechos reservados</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Bootstrap 5.3 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 </html>
